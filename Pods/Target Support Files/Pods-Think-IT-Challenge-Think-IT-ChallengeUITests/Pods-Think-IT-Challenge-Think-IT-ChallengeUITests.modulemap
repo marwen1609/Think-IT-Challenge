@@ -1,0 +1,6 @@
+framework module Pods_Think_IT_Challenge_Think_IT_ChallengeUITests {
+  umbrella header "Pods-Think-IT-Challenge-Think-IT-ChallengeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_Think_IT_Challenge {
+  umbrella header "Pods-Think-IT-Challenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
