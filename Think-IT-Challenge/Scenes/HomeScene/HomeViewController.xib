@@ -10,7 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Think_IT_Challenge" customModuleProvider="target">
             <connections>
+                <outlet property="dateLabel" destination="2aM-WO-763" id="wiN-Bm-XdA"/>
+                <outlet property="tableView" destination="Tfc-ph-jBU" id="dq9-AZ-Osa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="welcomeLabel" destination="k2T-YT-Tg2" id="rLL-A6-Rja"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,17 +21,45 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-ph-jBU">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-ph-jBU">
+                    <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                     <color key="backgroundColor" name="BackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zb-fW-ncd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 17, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aM-WO-763">
+                            <rect key="frame" x="16" y="16" width="94.5" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" name="TextGrey"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Jordan! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2T-YT-Tg2">
+                            <rect key="frame" x="16" y="43.5" width="277" height="42"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="BackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="2aM-WO-763" firstAttribute="leading" secondItem="6zb-fW-ncd" secondAttribute="leading" constant="16" id="HlH-Pk-UWo"/>
+                        <constraint firstItem="k2T-YT-Tg2" firstAttribute="top" secondItem="2aM-WO-763" secondAttribute="bottom" constant="8" id="IIh-ue-tKO"/>
+                        <constraint firstAttribute="height" constant="100" id="Rez-Xi-Geq"/>
+                        <constraint firstItem="k2T-YT-Tg2" firstAttribute="leading" secondItem="2aM-WO-763" secondAttribute="leading" id="iMJ-UV-Qom"/>
+                        <constraint firstItem="2aM-WO-763" firstAttribute="top" secondItem="6zb-fW-ncd" secondAttribute="top" constant="16" id="ojz-gY-mFU"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
-                <constraint firstItem="Tfc-ph-jBU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="7r9-Ql-jgs"/>
-                <constraint firstItem="Tfc-ph-jBU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XbF-3z-sGD"/>
-                <constraint firstItem="Tfc-ph-jBU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jaZ-5D-Zcs"/>
-                <constraint firstItem="Tfc-ph-jBU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="usd-B7-tTj"/>
+                <constraint firstItem="Tfc-ph-jBU" firstAttribute="top" secondItem="6zb-fW-ncd" secondAttribute="bottom" id="3jQ-mD-CQP"/>
+                <constraint firstItem="6zb-fW-ncd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8A0-4F-Gqj"/>
+                <constraint firstItem="6zb-fW-ncd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Lb0-NE-UMw"/>
+                <constraint firstItem="Tfc-ph-jBU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RmG-3m-Q0O"/>
+                <constraint firstItem="Tfc-ph-jBU" firstAttribute="trailing" secondItem="6zb-fW-ncd" secondAttribute="trailing" id="SoP-Cn-YKl"/>
+                <constraint firstItem="6zb-fW-ncd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eMj-02-Raq"/>
+                <constraint firstItem="Tfc-ph-jBU" firstAttribute="leading" secondItem="6zb-fW-ncd" secondAttribute="leading" id="ekh-7O-5AC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="139.880059970015"/>
@@ -37,6 +68,9 @@
     <resources>
         <namedColor name="BackgroundColor">
             <color red="0.97254901960784312" green="0.98039215686274506" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextGrey">
+            <color red="0.55686274509803924" green="0.5725490196078431" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

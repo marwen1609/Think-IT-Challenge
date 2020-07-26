@@ -20,8 +20,8 @@ class WelcomeCoordinator: Coordinator {
     let welcomeController = WelcomeViewController.initFromNib()
     let homeController = HomeViewController.initFromNib()
     let viewModel = WelcomeViewModel()
-    let homeViewModel = HomeViewModel()
     private let disposeBag = DisposeBag()
+    let defaults = UserDefaults.standard
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -39,16 +39,26 @@ class WelcomeCoordinator: Coordinator {
     // MARK: - Members
     
     func showWelcomeController() {
-        welcomeController.viewModel = viewModel
-        self.navigationController.pushViewController(self.welcomeController,animated: true)
+        if let username = defaults.object(forKey: "username") as? String {
+            
+            let homeViewModel = HomeViewModel(name: username)
+            self.homeController.viewModel = homeViewModel
+            self.navigationController.pushViewController(self.homeController, animated: true)
+            
+        }else {
+            welcomeController.viewModel = viewModel
+            self.navigationController.pushViewController(self.welcomeController,animated: true)
+        }
+        
     }
     
     func showHomeController() {
         viewModel.navigateToHome.subscribe(onNext: { [weak self] (name) in
-            guard let `self` = self else { return }
+          guard let `self` = self else { return }
             
-            self.homeController.viewModel = self.homeViewModel
-            self.homeController.name = name
+            self.defaults.set(name, forKey: "username")
+            let homeViewModel = HomeViewModel(name: name)
+            self.homeController.viewModel = homeViewModel
             self.navigationController.pushViewController(self.homeController, animated: true)
             }).disposed(by: disposeBag)
     }

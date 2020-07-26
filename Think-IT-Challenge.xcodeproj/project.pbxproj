@@ -23,6 +23,10 @@
 		19EC9C0024CDAABF00711418 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC9BFE24CDAABF00711418 /* HomeViewController.swift */; };
 		19EC9C0124CDAABF00711418 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19EC9BFF24CDAABF00711418 /* HomeViewController.xib */; };
 		19EC9C0624CDAB4F00711418 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC9C0524CDAB4F00711418 /* HomeViewModel.swift */; };
+		19EC9C0A24CDEC8F00711418 /* RoomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC9C0824CDEC8F00711418 /* RoomsTableViewCell.swift */; };
+		19EC9C0B24CDEC8F00711418 /* RoomsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19EC9C0924CDEC8F00711418 /* RoomsTableViewCell.xib */; };
+		19EC9C0D24CDECCE00711418 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC9C0C24CDECCE00711418 /* Room.swift */; };
+		19EC9C0F24CE0C9300711418 /* Strings+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC9C0E24CE0C9300711418 /* Strings+Extensions.swift */; };
 		2879000AB3D1445FDDF2CB75 /* Pods_Think_IT_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C5DA5F839AADF9714BBAF8 /* Pods_Think_IT_ChallengeTests.framework */; };
 		70DD61CAB977301AE723675F /* Pods_Think_IT_Challenge_Think_IT_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCF73D89EFCA3098FDB77B3 /* Pods_Think_IT_Challenge_Think_IT_ChallengeUITests.framework */; };
 		CA1816FE25A83B45B981494A /* Pods_Think_IT_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E042A1E7B0B349A3B646F3 /* Pods_Think_IT_Challenge.framework */; };
@@ -70,6 +74,10 @@
 		19EC9BFE24CDAABF00711418 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		19EC9BFF24CDAABF00711418 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = ../HomeViewController.xib; sourceTree = "<group>"; };
 		19EC9C0524CDAB4F00711418 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		19EC9C0824CDEC8F00711418 /* RoomsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsTableViewCell.swift; sourceTree = "<group>"; };
+		19EC9C0924CDEC8F00711418 /* RoomsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomsTableViewCell.xib; sourceTree = "<group>"; };
+		19EC9C0C24CDECCE00711418 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		19EC9C0E24CE0C9300711418 /* Strings+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Extensions.swift"; sourceTree = "<group>"; };
 		1DCF73D89EFCA3098FDB77B3 /* Pods_Think_IT_Challenge_Think_IT_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Think_IT_Challenge_Think_IT_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2628A7A9ADFDB69C0203A604 /* Pods-Think-IT-Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Think-IT-Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Think-IT-Challenge/Pods-Think-IT-Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		75003729C4199156FB3C875F /* Pods-Think-IT-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Think-IT-Challenge.release.xcconfig"; path = "Target Support Files/Pods-Think-IT-Challenge/Pods-Think-IT-Challenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				19E2ED0B24CC543C00602B31 /* NibInitializer.swift */,
+				19EC9C0E24CE0C9300711418 /* Strings+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 		19EC9C0224CDAAC400711418 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				19EC9C0724CDEC6300711418 /* Cells */,
 				19EC9BFE24CDAABF00711418 /* HomeViewController.swift */,
 				19EC9BFF24CDAABF00711418 /* HomeViewController.xib */,
 			);
@@ -285,8 +295,18 @@
 		19EC9C0424CDAAD100711418 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19EC9C0C24CDECCE00711418 /* Room.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		19EC9C0724CDEC6300711418 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				19EC9C0824CDEC8F00711418 /* RoomsTableViewCell.swift */,
+				19EC9C0924CDEC8F00711418 /* RoomsTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		90E262A9EC63B952B5EF0804 /* Frameworks */ = {
@@ -423,6 +443,7 @@
 			files = (
 				19E2ECE124CC538400602B31 /* LaunchScreen.storyboard in Resources */,
 				19E2ED1D24CC543C00602B31 /* WelcomeViewController.xib in Resources */,
+				19EC9C0B24CDEC8F00711418 /* RoomsTableViewCell.xib in Resources */,
 				19E2ECDE24CC538400602B31 /* Assets.xcassets in Resources */,
 				19EC9C0124CDAABF00711418 /* HomeViewController.xib in Resources */,
 			);
@@ -554,7 +575,10 @@
 			files = (
 				19E2ED1A24CC543C00602B31 /* NibInitializer.swift in Sources */,
 				19E2ED1B24CC543C00602B31 /* WelcomeViewModel.swift in Sources */,
+				19EC9C0D24CDECCE00711418 /* Room.swift in Sources */,
+				19EC9C0A24CDEC8F00711418 /* RoomsTableViewCell.swift in Sources */,
 				19E2ED1724CC543C00602B31 /* AppCoordinator.swift in Sources */,
+				19EC9C0F24CE0C9300711418 /* Strings+Extensions.swift in Sources */,
 				19EC9C0624CDAB4F00711418 /* HomeViewModel.swift in Sources */,
 				19E2ED1C24CC543C00602B31 /* WelcomeViewController.swift in Sources */,
 				19E2ED1E24CC543C00602B31 /* AppDelegate.swift in Sources */,
