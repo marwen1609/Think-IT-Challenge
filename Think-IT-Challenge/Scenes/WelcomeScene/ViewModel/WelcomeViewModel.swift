@@ -7,10 +7,24 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class WelcomeViewModel {
     
+     // MARK: - Properties
+    let name: BehaviorRelay<String> = BehaviorRelay(value: "")
+    let isContinueActive: Observable<Bool>
+    let navigateToHome = PublishSubject<String>()
+    
     init() {
-        
+        isContinueActive = name.map{
+            return $0.count > 2
+        }.asObservable()
     }
+    
+    func continueButtonTapped(){
+        navigateToHome.onNext(name.value)
+    }
+    
 }

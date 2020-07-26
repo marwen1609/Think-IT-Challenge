@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class WelcomeCoordinator: Coordinator {
     
@@ -17,8 +18,10 @@ class WelcomeCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     
     let welcomeController = WelcomeViewController.initFromNib()
+    let homeController = HomeViewController.initFromNib()
     let viewModel = WelcomeViewModel()
-//    private let disposeBag = DisposeBag()
+    let homeViewModel = HomeViewModel()
+    private let disposeBag = DisposeBag()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -30,16 +33,24 @@ class WelcomeCoordinator: Coordinator {
         
         navigationController.navigationBar.isHidden = true
         showWelcomeController()
-        
+        showHomeController()
     }
     
     // MARK: - Members
+    
     func showWelcomeController() {
-        
         welcomeController.viewModel = viewModel
-        self.navigationController.setViewControllers([self.welcomeController],animated: true)
-        
-        
+        self.navigationController.pushViewController(self.welcomeController,animated: true)
+    }
+    
+    func showHomeController() {
+        viewModel.navigateToHome.subscribe(onNext: { [weak self] (name) in
+            guard let `self` = self else { return }
+            
+            self.homeController.viewModel = self.homeViewModel
+            self.homeController.name = name
+            self.navigationController.pushViewController(self.homeController, animated: true)
+            }).disposed(by: disposeBag)
     }
     
     
