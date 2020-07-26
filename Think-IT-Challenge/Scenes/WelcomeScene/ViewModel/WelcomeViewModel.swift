@@ -12,7 +12,7 @@ import RxCocoa
 
 class WelcomeViewModel {
     
-     // MARK: - Properties
+    // MARK: - Properties
     let name: BehaviorRelay<String> = BehaviorRelay(value: "")
     let isContinueActive: Observable<Bool>
     let navigateToHome = PublishSubject<String>()

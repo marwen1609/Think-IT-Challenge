@@ -54,13 +54,13 @@ class WelcomeCoordinator: Coordinator {
     
     func showHomeController() {
         viewModel.navigateToHome.subscribe(onNext: { [weak self] (name) in
-          guard let `self` = self else { return }
+            guard let `self` = self else { return }
             
             self.defaults.set(name, forKey: "username")
             let homeViewModel = HomeViewModel(name: name)
             self.homeController.viewModel = homeViewModel
             self.navigationController.pushViewController(self.homeController, animated: true)
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     

@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let disposeBag = DisposeBag()
-
+    
     // MARK: - Properties
     var viewModel: HomeViewModel?
     let cellIdentifier = "RoomsTableViewCell"
@@ -33,26 +33,26 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
-       
+        
     }
     func setupBindings(){
         guard let viewModel = viewModel else {
             return }
         
         viewModel.welcomeText.asObservable()
-        .map { text -> String? in
-            return Optional(text)
+            .map { text -> String? in
+                return Optional(text)
         }.bind(to:welcomeLabel.rx.text)
-        .disposed(by:self.disposeBag)
+            .disposed(by:self.disposeBag)
         
         viewModel.dateText.asObservable()
-        .map { text -> String? in
-            return Optional(text)
+            .map { text -> String? in
+                return Optional(text)
         }.bind(to:dateLabel.rx.text)
-        .disposed(by:self.disposeBag)
-
+            .disposed(by:self.disposeBag)
+        
     }
-  
+    
     
 }
 

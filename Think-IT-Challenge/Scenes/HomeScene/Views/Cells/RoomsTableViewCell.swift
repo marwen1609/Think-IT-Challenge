@@ -9,7 +9,7 @@
 import UIKit
 
 class RoomsTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var roomImageView: UIImageView!
     @IBOutlet weak var roomNameLabel: UILabel!
@@ -27,11 +27,10 @@ class RoomsTableViewCell: UITableViewCell {
         containerView.layer.shadowRadius = 1.0
         containerView.clipsToBounds = false
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
 }

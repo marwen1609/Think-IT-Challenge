@@ -12,14 +12,14 @@ import RxCocoa
 
 class WelcomeViewController: UIViewController {
     
-     // MARK: - IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var nameTexField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
     
-     // MARK: - Properites
+    // MARK: - Properites
     var viewModel: WelcomeViewModel?
     let disposeBag = DisposeBag()
-     // MARK: - LifeCycle
+    // MARK: - LifeCycle
     
     
     
@@ -30,7 +30,7 @@ class WelcomeViewController: UIViewController {
     }
     
     
-     // MARK: - Members
+    // MARK: - Members
     
     fileprivate func setupViews() {
         continueButton.layer.cornerRadius = 8
@@ -38,26 +38,23 @@ class WelcomeViewController: UIViewController {
     }
     
     ///Setting up the properties binding to the view model
-  fileprivate func setupBindings(){
+    fileprivate func setupBindings(){
         guard let viewModel = self.viewModel else { return }
         
         nameTexField.rx
-             .text
-             .orEmpty
-             .bind(to: viewModel.name)
-             .disposed(by: disposeBag)
-    
-        viewModel.isContinueActive
-        .bind(to: continueButton.rx.isEnabled)
-        .disposed(by: disposeBag)
-    
-        continueButton.rx
-                .tap
-                .bind { viewModel.continueButtonTapped() }
-                .disposed(by: disposeBag)
+            .text
+            .orEmpty
+            .bind(to: viewModel.name)
+            .disposed(by: disposeBag)
         
+        viewModel.isContinueActive
+            .bind(to: continueButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        continueButton.rx
+            .tap
+            .bind { viewModel.continueButtonTapped() }
+            .disposed(by: disposeBag)
         
     }
-
-
 }

@@ -17,6 +17,7 @@ class AppCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var window: UIWindow?
+    
     // MARK: - Initializers
     init(navigationController: UINavigationController ) {
         self.navigationController = navigationController
